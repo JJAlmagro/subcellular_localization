@@ -35,15 +35,15 @@ n_class = 10
 batch_size = int(args.batch_size)
 seq_len = 1000
 n_hid = int(args.n_hid)
-lr = int(args.learning_rate)
+lr = float(args.learning_rate)
 num_epochs = int(args.epochs)
-drop_per = int(args.in_dropout)
-drop_hid = int(args.hid_dropout)
+drop_per = float(args.in_dropout)
+drop_hid = float(args.hid_dropout)
 n_filt = int(args.n_filters)
 
 theano.config.floatX='float32'
-lasagne.random.set_rng(np.random.RandomState(seed=args.seed))
-np.random.seed(seed=args.seed)
+lasagne.random.set_rng(np.random.RandomState(seed=int(args.seed)))
+np.random.seed(seed=int(args.seed))
 
 # Load data
 print "Loading data...\n"
